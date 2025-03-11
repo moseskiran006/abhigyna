@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhigna Machineries Pvt Ltd - World Class Industrial Equipment Supplier</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #e09900;
+            --dark-color: #333;
+            --light-color: #f4f4f4;
+            --success-color: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #003d7a;
+            transform: translateY(-3px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #777;
+        }
+        
+        /* Header Styles */
+        #main-header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .nav-menu {
+            display: flex;
+        }
+        
+        .nav-menu li {
+            margin-left: 25px;
+        }
+        
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--dark-color);
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/600') no-repeat center center/cover;
+            color: white;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .hero-btns .btn {
+            margin: 0 10px;
+        }
+        
+        /* About Section */
+        #about {
+            padding: 100px 0;
+            background-color: var(--light-color);
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Services Section */
+        #services {
+            padding: 100px 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* Products Section */
+        #products {
+            padding: 100px 0;
+            background-color: var(--light-color);
+        }
+        
+        .product-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .tab-btn {
+            padding: 10px 20px;
+            margin: 0 10px 10px;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .tab-btn.active, .tab-btn:hover {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .product-info p {
+            color: #777;
+            margin-bottom: 15px;
+        }
+        
+        /* Clients Section */
+        #clients {
+            padding: 100px 0;
+        }
+        
+        .clients-slider {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+        
+        .client-logo {
+            width: 150px;
+            height: 100px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 15px;
+        }
+        
+        .client-logo img {
+            max-width: 100%;
+            max-height: 70px;
+            filter: grayscale(100%);
+            transition: filter 0.3s;
+        }
+        
+        .client-logo:hover img {
+            filter: grayscale(0%);
+        }
+        
+        /* Contact Section */
+        #contact {
+            padding: 100px 0;
+            background-color: var(--light-color);
+        }
+        
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+            min-width: 25px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: background 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: #003d7a;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .footer-links a {
+            display: block;
+            color: #ddd;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                margin: 10px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content, .contact-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="header-container container">
+            <div class="logo">
+                <img src="/api/placeholder/50/50" alt="Abhigna Machineries Logo">
+                <h1>Abhigna Machineries</h1>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#clients">Clients</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span>☰</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>World Class Industrial Equipment Supplier</h1>
+            <p>Abhigna Machineries Pvt Ltd provides premium services and equipment for Power Plants, Palm Oil Mills, and Sugar Mills globally.</p>
+            <div class="hero-btns">
+                <a href="#services" class="btn">Our Services</a>
+                <a href="#contact" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Abhigna Machineries</h2>
+                    <p>Established with a vision to deliver world-class industrial solutions, Abhigna Machineries Pvt Ltd has grown to become a trusted name in the global industrial equipment market.</p>
+                    <p>We specialize in providing high-quality equipment and exceptional services for Power Plants, Palm Oil Mills, and Sugar Mills. Our commitment to excellence, innovation, and customer satisfaction has earned us the trust of leading industrial companies worldwide.</p>
+                    <p>With a team of experienced professionals and state-of-the-art facilities, we ensure that our clients receive nothing but the best in terms of product quality, service efficiency, and technical support.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="about-image">
+                    <img src="/api/placeholder/600/400" alt="About Abhigna Machineries">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We offer comprehensive services tailored to meet the specific needs of Power Plants, Palm Oil Mills, and Sugar Mills.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Power Plant Solutions</h3>
+                    <p>Complete equipment supply, installation, maintenance, and optimization services for power generation facilities of all sizes.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌴</div>
+                    <h3>Palm Oil Mill Equipment</h3>
+                    <p>State-of-the-art machinery and comprehensive solutions for efficient palm oil extraction and processing.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🍬</div>
+                    <h3>Sugar Mill Technology</h3>
+                    <p>Advanced equipment and innovative solutions for sugar production, refining, and by-product utilization.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Maintenance & Repairs</h3>
+                    <p>Preventive maintenance, emergency repairs, and comprehensive service packages to ensure optimal equipment performance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔄</div>
+                    <h3>Upgrades & Modernization</h3>
+                    <p>Equipment upgrades and facility modernization services to enhance efficiency, productivity, and environmental compliance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>Consultation Services</h3>
+                    <p>Expert consultation on equipment selection, facility design, process optimization, and industry best practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Products</h2>
+                <p>We supply high-quality equipment and machinery designed to meet the rigorous demands of industrial applications.</p>
+            </div>
+            <div class="product-tabs">
+                <button class="tab-btn active">Power Plant</button>
+                <button class="tab-btn">Palm Oil Mill</button>
+                <button class="tab-btn">Sugar Mill</button>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="/api/placeholder/300/200" alt="Turbine Generator Sets">
+                    </div>
+                    <div class="product-info">
+                        <h3>Turbine Generator Sets</h3>
+                        <p>High-efficiency turbine generator sets with advanced control systems for reliable power generation.</p>
+                        <a href="#" class="btn btn-outline">Details</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="/api/placeholder/300/200" alt="Boiler Systems">
+                    </div>
+                    <div class="product-info">
+                        <h3>Boiler Systems</h3>
+                        <p>Industrial boilers with superior thermal efficiency and emissions control for various applications.</p>
+                        <a href="#" class="btn btn-outline">Details</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="/api/placeholder/300/200" alt="Control & Automation">
+                    </div>
+                    <div class="product-info">
+                        <h3>Control & Automation</h3>
+                        <p>Advanced control and automation systems for optimal plant operation and performance monitoring.</p>
+                        <a href="#" class="btn btn-outline">Details</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="/api/placeholder/300/200" alt="Heat Exchangers">
+                    </div>
+                    <div class="product-info">
+                        <h3>Heat Exchangers</h3>
+                        <p>Efficient heat transfer equipment designed for durability and performance in demanding environments.</p>
+                        <a href="#" class="btn btn-outline">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Clients</h2>
+                <p>We have earned the trust of leading industrial companies worldwide through our commitment to excellence.</p>
+            </div>
+            <div class="clients-slider">
+                <div class="client-logo">
+                    <img src="/api/placeholder/120/60" alt="Client 1">
+                </div>
+                <div class="client-logo">
+                    <img src="/api/placeholder/120/60" alt="Client 2">
+                </div>
+                <div class="client-logo">
+                    <img src="/api/placeholder/120/60" alt="Client 3">
+                </div>
+                <div class="client-logo">
+                    <img src="/api/placeholder/120/60" alt="Client 4">
+                </div>
+                <div class="client-logo">
+                    <img src="/api/placeholder/120/60" alt="Client 5">
+                </div>
+                <div class="client-logo">
+                    <img src="/api/placeholder/120/60" alt="Client 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our team for inquiries, quotations, or support. We're here to assist you.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <p>Abhigna Machineries Pvt Ltd</p>
+                                <p>123 Industrial Area, Bangalore</p>
+                                <p>Karnataka, India - 560001</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <p>+91 9876543210</p>
+                                <p>+91 080-12345678</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <p>info@abhignas.com</p>
+                                <p>sales@abhignas.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><span>f</span></a>
+                        <a href="#"><span>in</span></a>
+                        <a href="#"><span>YT</span></a>
+                        <a href="#"><span>tw</span></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>Abhigna Machineries Pvt Ltd is a world-class service provider and industrial equipment supplier for Power Plants, Palm Oil Mills, and Sugar Mills globally.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="#hero">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#services">Services</a>
+                        <a href="#products">Products</a>
+                        <a href="#clients">Clients</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <div class="footer-links">
+                        <a href="#">Power Plant Solutions</a>
+                        <a href="#">Palm Oil Mill Equipment</a>
+                        <a href="#">Sugar Mill Technology</a>
+                        <a href="#">Maintenance & Repairs</a>
+                        <a href="#">Upgrades & Modernization</a>
+                        <a href="#">Consultation Services</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates and news.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Abhigna Machineries Pvt Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Product tabs functionality
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    tabBtns.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    // Here you would typically show/hide different products
+                    // For this demo, we're just changing the active state
+                });
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
